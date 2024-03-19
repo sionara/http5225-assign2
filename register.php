@@ -4,7 +4,6 @@ include('includes/database.php');
 include('includes/config.php');
 include('includes/functions.php');
 
-secure();
 
 if (isset($_POST['first'])) {
 
@@ -25,7 +24,7 @@ if (isset($_POST['first'])) {
       )';
     mysqli_query($connect, $query);
 
-    set_message('User has been added');
+    set_message('Admin has been added');
   }
 
   /*
@@ -35,7 +34,7 @@ if (isset($_POST['first'])) {
   die();
   */
 
-  header('Location: users.php');
+  header('Location: login.php');
   die();
 }
 
@@ -43,29 +42,28 @@ include('includes/header.php');
 
 ?>
 
-<h2>Add Users</h2>
+<h2>Register an Admin</h2>
 
 <form method="post">
 
-  <label for="first">First Name:</label>
-  <input type="text" name="first" id="first">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">First Name:</label>
+    <input type="text" class="form-control" id="first" aria-describedby="emailHelp" name='first' required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Last Name:</label>
+    <input type="text" class="form-control" id="last" aria-describedby="emailHelp" name='last' required>
+  </div>
 
-  <br>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Email: </label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required>
+  </div>
 
-  <label for="last">Last Name:</label>
-  <input type="text" name="last" id="last">
-
-  <br>
-
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email">
-
-  <br>
-
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password">
-
-  <br>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"> Password:</label>
+    <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" required>
+  </div>
 
   <label for="active">Active:</label>
   <?php
@@ -83,11 +81,11 @@ include('includes/header.php');
 
   <br>
 
-  <input type="submit" value="Add User">
+  <button type="submit" class="btn btn-primary m-3" value="Add User">Submit</button>
 
 </form>
 
-<p><a href="login.php"><i class="fas fa-arrow-circle-left"></i> Return to User List</a></p>
+<p><a href="login.php"><i class="fas fa-arrow-circle-left"></i> Return to login</a></p>
 
 
 <?php

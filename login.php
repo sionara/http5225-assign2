@@ -1,5 +1,6 @@
 <?php
 
+include('includes/check_session.php');
 include('includes/database.php');
 include('includes/config.php');
 include('includes/functions.php');
@@ -40,20 +41,20 @@ include('includes/header.php');
 <div style="max-width: 400px; margin:auto">
 
   <form method="post">
-
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email">
-
-    <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-
-    <br>
-
-    <input type="submit" value="Login">
-
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+
+  <br>
+
+  <a class="btn btn-secondary" href="register.php" role="button">Not registered? Click here to register as an Admin</a>
 
 </div>
 

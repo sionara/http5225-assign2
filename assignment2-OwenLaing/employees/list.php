@@ -17,6 +17,10 @@ include('../../includes/database.php');
     <div class="container my-5">
         <h2>Employees List</h2>
         <a href="./add.php" class="btn btn-primary" role="button">Add New Employee</a>
+
+        <!-- Added back to home button for easier navigation -->
+        <a class="btn btn-primary" href="../../login.php" role="button">Back to Home</a>
+
         <br>
         <table class="table">
             <thead>
