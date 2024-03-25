@@ -10,6 +10,8 @@ include('includes/header.php');
 
 ?>
 
+<a class="btn btn-primary" href="logout.php" role="button">Logout</a>
+
 <table class="table">
   <thead>
     <tr>
